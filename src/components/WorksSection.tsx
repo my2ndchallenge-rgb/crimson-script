@@ -41,15 +41,17 @@ const WorksSection = () => {
                 <span className="text-xs font-medium text-muted-foreground tracking-[0.2em]">
                   {work.num}
                 </span>
-                <div className="flex items-center gap-6 mt-3 mb-5">
-                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300">
+                <div className="flex items-center gap-8 mt-3 mb-5">
+                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300 flex-shrink-0">
                     {work.title}
                   </h3>
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-24 h-16 md:w-32 md:h-20 object-cover rounded opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
+                  <div className="w-48 h-32 md:w-72 md:h-48 flex-shrink-0 overflow-hidden rounded">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {work.tags.map((tag) => (
