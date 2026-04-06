@@ -4,18 +4,21 @@ const works = [
     title: "악의 꽃",
     tags: ["신라", "Historical Fantasy", "Pilot Complete"],
     logline: "— 로그라인 준비 중",
+    image: "/images/work-01.jpg",
   },
   {
     num: "02",
     title: "원화",
     tags: ["신라", "Historical Drama", "Pilot Complete"],
     logline: "— 로그라인 준비 중",
+    image: "/images/work-02.jpg",
   },
   {
     num: "03",
     title: "단 하나의 꿈",
     tags: ["고조선–삼한", "Epic Series", "In Development"],
     logline: "— 로그라인 준비 중",
+    image: "/images/work-03.jpg",
   },
 ];
 
@@ -38,9 +41,16 @@ const WorksSection = () => {
                 <span className="text-xs font-medium text-muted-foreground tracking-[0.2em]">
                   {work.num}
                 </span>
-                <h3 className="work-title font-korean font-normal text-xl md:text-2xl mt-3 mb-5 transition-colors duration-300">
-                  {work.title}
-                </h3>
+                <div className="flex items-center gap-6 mt-3 mb-5">
+                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300">
+                    {work.title}
+                  </h3>
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-24 h-16 md:w-32 md:h-20 object-cover rounded opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {work.tags.map((tag) => (
                     <span
