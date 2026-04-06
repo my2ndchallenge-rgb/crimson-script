@@ -33,47 +33,44 @@ const WorksSection = () => {
         {works.map((work) => (
           <div
             key={work.num}
-            className="work-card group border-b border-border py-10 md:py-14 px-4 md:px-8 transition-colors duration-500 hover:bg-primary/5 cursor-pointer relative overflow-hidden"
+            className="work-card group border-b border-border cursor-pointer relative overflow-hidden"
           >
-            <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
-              {/* Left content */}
-              <div className="flex-1 min-w-0">
-                <span className="text-xs font-medium text-muted-foreground tracking-[0.2em]">
-                  {work.num}
-                </span>
-                <div className="flex items-center gap-8 mt-3 mb-5">
-                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300 w-28 md:w-40 flex-shrink-0">
+            <div className="flex flex-col md:flex-row">
+              {/* Left: background image area */}
+              <div className="relative flex-1 min-w-0 py-10 md:py-14 px-6 md:px-10">
+                {/* Background image */}
+                <img
+                  src={work.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover saturate-[0.5] contrast-[1.1] brightness-[0.3] blur-[2px] group-hover:brightness-[0.45] group-hover:blur-[1px] transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60" />
+
+                {/* Content over image */}
+                <div className="relative z-10">
+                  <span className="text-xs font-medium text-white/60 tracking-[0.2em]">
+                    {work.num}
+                  </span>
+                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl text-white mt-3 mb-5 transition-colors duration-300">
                     {work.title}
                   </h3>
-                  <div className="w-48 md:w-80 flex-shrink-0 overflow-hidden rounded" style={{ aspectRatio: '16/9' }}>
-                    <img
-                      src={work.image}
-                      alt={work.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 saturate-[0.7] contrast-[1.1] brightness-[0.85]"
-                    />
+                  <div className="flex flex-wrap gap-3">
+                    {work.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] uppercase tracking-[0.15em] text-white/70 border border-white/20 px-3 py-1"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {work.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground border border-border px-3 py-1"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
               </div>
 
-              {/* Logline panel - slides in on hover (desktop), always visible below on mobile */}
-              <div className="md:w-[45%] md:flex-shrink-0">
+              {/* Right: logline panel */}
+              <div className="md:w-[35%] md:flex-shrink-0 py-6 md:py-14 px-6 md:px-10">
                 <div className="logline-slide md:border-l md:border-primary md:pl-8 py-2 block md:group-hover:opacity-100 md:group-hover:translate-x-0">
-                  {/* On mobile, always show */}
-                  <p className="text-sm text-muted-foreground font-korean leading-relaxed md:hidden">
-                    {work.logline}
-                  </p>
-                  {/* On desktop, slide in */}
-                  <p className="text-sm text-muted-foreground font-korean leading-relaxed hidden md:block">
+                  <p className="text-sm text-muted-foreground font-korean leading-relaxed">
                     {work.logline}
                   </p>
                 </div>
