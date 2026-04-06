@@ -10,10 +10,10 @@ const HeroSection = () => {
           Screenwriter · Original IP
         </p>
 
-        <h1 className="font-korean font-black text-4xl md:text-6xl lg:text-7xl leading-tight max-w-4xl">
-          <span className="text-foreground">역사가 침묵한 자리에서</span>
+        <h1 className="font-korean font-normal text-2xl md:text-3xl lg:text-4xl leading-tight max-w-4xl whitespace-nowrap">
+          <span className="text-foreground">BC와 AD 사이, 신화에서 역사로 —</span>
           <br />
-          <span className="text-primary text-glow">이야기가 시작된다</span>
+          <span className="text-primary text-glow">잉클링스, 중앙</span>
         </h1>
 
         <p className="mt-8 text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
