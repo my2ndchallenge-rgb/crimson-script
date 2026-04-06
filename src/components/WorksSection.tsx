@@ -38,7 +38,7 @@ const WorksSection = () => {
                 <span className="text-xs font-medium text-muted-foreground tracking-[0.2em]">
                   {work.num}
                 </span>
-                <h3 className="work-title font-korean font-black text-3xl md:text-5xl mt-3 mb-5 transition-colors duration-300">
+                <h3 className="work-title font-korean font-normal text-xl md:text-2xl mt-3 mb-5 transition-colors duration-300">
                   {work.title}
                 </h3>
                 <div className="flex flex-wrap gap-3">
