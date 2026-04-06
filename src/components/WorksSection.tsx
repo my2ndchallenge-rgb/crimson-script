@@ -42,14 +42,14 @@ const WorksSection = () => {
                   {work.num}
                 </span>
                 <div className="flex items-center gap-8 mt-3 mb-5">
-                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300 flex-shrink-0">
+                  <h3 className="work-title font-korean font-normal text-xl md:text-2xl transition-colors duration-300 w-28 md:w-40 flex-shrink-0">
                     {work.title}
                   </h3>
-                  <div className="w-48 h-32 md:w-72 md:h-48 flex-shrink-0 overflow-hidden rounded">
+                  <div className="w-48 md:w-80 flex-shrink-0 overflow-hidden rounded" style={{ aspectRatio: '16/9' }}>
                     <img
                       src={work.image}
                       alt={work.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 saturate-[0.7] contrast-[1.1] brightness-[0.85]"
                     />
                   </div>
                 </div>
